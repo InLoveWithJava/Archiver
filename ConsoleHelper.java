@@ -23,4 +23,18 @@ public class ConsoleHelper {
         }
         return result;
     }
+
+    public static int readInt() {
+        int result = 0;
+        while (true) {
+            try {
+                result = Integer.parseInt(readString());
+                break;
+            } catch (NumberFormatException e) {
+                System.out.println("Произошла ошибка при попытке ввода числа. Попробуйте еще раз.");
+            }
+        }
+        return result;
+    }
+
 }
