@@ -18,12 +18,9 @@ public class CommandExecutor {
     }
 
     private CommandExecutor() {
-
     }
 
     public static void execute(Operation operation) throws Exception {
-        for (Map.Entry<Operation, Command> concrete : allKnownCommandsMap.entrySet()) {
-            if (concrete.getKey() == operation) concrete.getValue().execute();
-        }
+        allKnownCommandsMap.get(operation).execute();
     }
 }
